@@ -1,0 +1,26 @@
+{
+  "name": "sysinternals",
+  "version": "1.0.0",
+  "description": "get sysinternals",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Yan",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "got": "^3.3.0",
+    "vue": "^0.12.6"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanxyz/sysinternals.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanxyz/sysinternals/issues"
+  },
+  "homepage": "https://github.com/yanxyz/sysinternals#readme"
+}

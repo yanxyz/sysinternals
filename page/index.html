@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Windows Sysinternals</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="page">
+  <h1><a href="https://technet.microsoft.com/en-us/sysinternals/bb545027">Sysinternals Utilities Index</a></h1>
+  <p><a href="https://technet.microsoft.com/en-us/sysinternals/bb842062">
+Sysinternals Suite</a><br>The entire set of Sysinternals Utilities rolled up into a single download.</p>
+  <p><label>filter: <input type="text" v-model="query" /></label></p>
+  <table id="grid">
+    <caption>Index at {{time}}</caption>
+    <thead>
+      <th style="width: 70px" v-on="click:sortBy('name')">Name
+        <span class="arrow" v-class="reversed.name ? 'dsc' : 'asc'"></span>
+      </th>
+      <th style="width: 50px">Ver</th>
+      <th style="width: 180px" v-on="click:sortBy('date')">Published
+        <span class="arrow" v-class="reversed.date ? 'dsc' : 'asc'"></span>
+      </th>
+      <th>Description</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr v-repeat="rows
+        | filterBy query in filterKey
+        | orderBy sortKey reversed[sortKey]">
+        <td><a href="{{href}}">{{name}}</a></td>
+        <td>{{version}}</td>
+        <td>{{date}}</td>
+        <td>{{description}}</td>
+        <td><a href="https://download.sysinternals.com/files/{{zipName}}.zip">download</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="bundle.js"></script>
+</body>
+</html>
